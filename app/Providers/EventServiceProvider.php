@@ -13,11 +13,14 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        'App\Events\ActionDone' => [
+            'App\Listeners\ThingToDoAfterEventWasFired',
         ],
     ];
 
+    protected $subscribe = [
+        'App\Listeners\UserEventListener',
+    ];
     /**
      * Register any events for your application.
      *
